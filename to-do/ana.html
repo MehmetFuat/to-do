@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Bugünün Görevleri</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #ede7f6, #fff);
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 100%;
+      margin: 0 auto;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(123, 31, 162, 0.3);
+      background: transparent;
+    }
+
+    .ust-kisim {
+      
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0px;
+      padding: 10px 20px;
+      background-color: purple;
+      margin-top: 0px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(123, 31, 162, 0.1);
+      
+    }
+
+    .ust-kisim h2 {
+      margin: 0;
+      font-size: 1.8em;
+      color: white;
+      flex-shrink: 0;
+    }
+
+    .ust-kisim > div {
+      display: flex;
+      gap: 10px;
+      flex-wrap: nowrap;
+      align-items: center;
+    }
+
+    .cikis, #karanlikModButonu {
+      padding: 8px 14px;
+      background: #ab47bc;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 0.95em;
+      transition: background 0.3s ease;
+    }
+
+    .cikis:hover, #karanlikModButonu:hover {
+      background: #8e24aa;
+    }
+
+    .input-area {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      margin-bottom: 20px;
+    }
+
+    .input-area input,
+    .input-area select {
+      padding: 10px;
+      font-size: 14px;
+      border: 2px solid #7b1fa2;
+      border-radius: 6px;
+      flex: 1 1 auto;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      background: #d1c4e9;
+      margin-top: 10px;
+      padding: 12px;
+      border-radius: 6px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    li:hover {
+      background: #b39ddb;
+    }
+
+    li span:first-child {
+      font-weight: bold;
+    }
+
+    .silButonu {
+      background: #ab47bc;
+      color: white;
+      border: none;
+      padding: 6px 10px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background 0.3s;
+      margin-top: 5px;
+    }
+
+    .silButonu:hover {
+      background: #8e24aa;
+    }
+
+    section {
+      padding: 40px 20px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      font-size: 0.95em;
+      background: #ede7f6;
+      color: #6a1b9a;
+    }
+
+    footer a {
+      color: #7b1fa2;
+      text-decoration: none;
+    }
+    .gorev-ekle {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin: 30px auto;
+    max-width: 700px;
+}
+
+.gorev-ekle input,
+.gorev-ekle select {
+    padding: 8px 12px;
+    font-size: 14px;
+    border: 2px solid #7b1fa2;
+    border-radius: 6px;
+    width: 160px;
+}
+
+.gorev-ekle button {
+    padding: 8px 16px;
+    background: #7b1fa2;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+#kategoriler {
+    text-align: center;
+    margin: 40px auto;
+    max-width: 800px;
+}
+
+#kategoriler h3 {
+    color: #6a1b9a;
+    margin-top: 30px;
+}
+
+#kategoriler ul {
+    padding: 0;
+    margin: 0 auto 20px auto;
+    max-width: 600px;
+}
+li {
+    background: #d1c4e9;
+    margin-top: 10px;
+    padding: 10px 16px;
+    border-radius: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+body.dark-mode {
+  background: linear-gradient(135deg, #1e1e2f, #121212);
+  color: #f3e5f5;
+}
+
+body.dark-mode .container {
+  background: transparent;
+}
+
+body.dark-mode .ust-kisim {
+  background-color: #2e2b3f;
+}
+
+body.dark-mode h2,
+body.dark-mode h3 {
+  color: #e1bee7;
+}
+
+body.dark-mode .cikis,
+body.dark-mode #karanlikModButonu {
+  background: #7b1fa2;
+  color: white;
+}
+
+body.dark-mode .cikis:hover,
+body.dark-mode #karanlikModButonu:hover {
+  background: #4a0072;
+}
+
+body.dark-mode .gorev-ekle input,
+body.dark-mode .gorev-ekle select {
+  background: #2a2a3d;
+  color: #f3e5f5;
+  border-color: #9575cd;
+}
+
+body.dark-mode li {
+  background: #4a148c;
+  color: #ffffff;
+}
+
+body.dark-mode li:hover {
+  background: #6a1b9a;
+}
+
+body.dark-mode footer {
+  background: #2e2b3f;
+  color: #ce93d8;
+}
+
+body.dark-mode section {
+  background-color: #2a2a3d !important;
+}
+
+body.dark-mode section h2 {
+  color: #ce93d8 !important;
+}
+#karanlikModButonu {
+  padding: 8px 14px;
+  background: #ab47bc;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.95em;
+  transition: background 0.3s ease;
+
+  /* Sabitleme için eklenenler */
+  position: fixed;
+  top: 120px;
+  right: 20px;
+  z-index: 999;
+}
+
+
+
+    @media (max-width: 600px) {
+      .ust-kisim {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .ust-kisim > div {
+        width: 100%;
+        justify-content: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="ust-kisim">
+      <h2 color="white" style="text-align: center;">Görevlerin</h2>
+      <div>
+        <button id="karanlikModButonu">🌙</button>
+        <button class="cikis" onclick="cikisYap()">Çıkış Yap</button>
+      </div>
+    </div>
+
+    <div class="gorev-ekle input-area">
+      <input type="text" id="gorevMetni" placeholder="Görev yaz...">
+      <input type="date" id="tarih">
+      <input type="time" id="saat">
+      <select id="kategori">
+        <option value="gunluk">🗓 Günlük İşler</option>
+        <option value="egitim">📚 Eğitim</option>
+        <option value="uyaninca">🌅 Uyanınca</option>
+        <option value="yatmadan">🌙 Yatmadan Önce</option>
+      </select>
+      <button onclick="gorevEkle()">Ekle</button>
+    </div>
+
+    <div id="kategoriler">
+      <h3>🗓 Günlük İşler</h3>
+      <ul id="liste-gunluk"></ul>
+
+      <h3>📚 Eğitim</h3>
+      <ul id="liste-egitim"></ul>
+
+      <h3>🌅 Uyanınca</h3>
+      <ul id="liste-uyaninca"></ul>
+
+      <h3>🌙 Yatmadan Önce</h3>
+      <ul id="liste-yatmadan"></ul>
+    </div>
+
+    <section style="background-color: #f3e5f5; text-align: center;">
+      <h2 style="color: #7b1fa2;">✨ Günün Motivasyonu</h2>
+      <blockquote style="font-style: italic; font-size: 1.2em; margin-top: 10px;">
+        “Zamanınızı boşa harcamayın. Hayat kısa, yapılacak çok şey var.”
+      </blockquote>
+    </section>
+
+    <section style="background: #ede7f6;">
+      <h2 style="color: #512da8; text-align: center;">🛠️ Nasıl Kullanılır?</h2>
+      <ul style="max-width: 600px; margin: 20px auto; font-size: 1.1em; line-height: 1.6;">
+        <li>Görevini yaz, tarih ve saat seç.</li>
+        <li>İlgili kategoriye ekle.</li>
+        <li>Bitirdiğinde “Sil” ile temizle.</li>
+        <li>Görevler tarayıcında saklanır, sayfa yenilense bile kalır.</li>
+      </ul>
+    </section>
+
+    <section style="background: #e1bee7; text-align: center;">
+      <h2 style="color: #4a148c; text-align: center;">📌 Bugün Ne Yapmalı?</h2>
+      <div style="max-width: 400px; margin: 20px auto; background: white; border-radius: 10px; padding: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+        <p style="font-size: 1.1em;">Bir hedef belirle. Küçük bile olsa tamamla. İlerlemenin tadını çıkar.</p>
+      </div>
+    </section>
+
+    <section style="background-color: #f3e5f5;">
+      <h2 style="color:#6a1b9a; text-align: center;">📘 Bilgi Köşesi</h2>
+      <div style="max-width: 700px; margin: auto; font-size: 1.05em;">
+        <p><strong>⏰ Zaman yönetimi:</strong> Sabah erken kalkmak, gününü planlamak için altın değerindedir.</p>
+        <p><strong>📖 Mini alışkanlıklar:</strong> Günde sadece 5 dakikalık yeni alışkanlıklar, uzun vadede büyük farklar yaratır.</p>
+      </div>
+    </section>
+
+    <footer>
+      <p>&copy; 2025 Görev Uygulaması</p>
+    </footer>
+  </div>
+
+  <script src="anaSayfa.js">
+    
+  </script>
+</body>
+</html>

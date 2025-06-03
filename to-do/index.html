@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Giriş Yap / Kayıt Ol</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: linear-gradient(to bottom right, #e6e0f8, #ffffff);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .kapsayici {
+      background-color: #ffffff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    input, button {
+      display: block;
+      margin: 10px auto;
+      padding: 10px;
+      width: 80%;
+      font-size: 16px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    h2 {
+      color: #663399;
+    }
+
+    button {
+      background-color: #663399;
+      color: white;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #542c85;
+    }
+  </style>
+</head>
+<body>
+  <div class="kapsayici">
+    <h2>Görev Uygulaması</h2>
+    <input type="text" id="kullaniciAdi" placeholder="Kullanıcı adı girin">
+    <button onclick="kayitOl()">Kayıt Ol</button>
+    <button onclick="girisYap()">Giriş Yap</button>
+  </div>
+
+  <script src="login.js">
+   
+  </script>
+</body>
+</html>
